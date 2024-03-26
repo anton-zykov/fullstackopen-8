@@ -1,5 +1,12 @@
+import { parseArgumentsExercises } from './parseArguments';
+
 type Rating = 1 | 2 | 3;
 type RatingDescription = 'Practice more!' | 'Keep up!' | 'Well done!';
+
+export interface IcalculateExercises {
+  dailyExerciseHours: number[];
+  targetAmount: number;
+}
 
 interface Result {
   periodLength: number;
@@ -26,4 +33,13 @@ const calculateExercises = (dailyExerciseHours: number[], targetAmount: number):
   };
 };
 
-console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2));
+try {
+  const { dailyExerciseHours, targetAmount } = parseArgumentsExercises(process.argv);
+  console.log(calculateExercises(dailyExerciseHours, targetAmount));
+} catch (error: unknown) {
+  let errorMessage = 'Something bad happened.'
+  if (error instanceof Error) {
+    errorMessage += ' Error: ' + error.message;
+  }
+  console.log(errorMessage);
+}
