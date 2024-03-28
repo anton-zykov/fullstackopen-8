@@ -1,5 +1,5 @@
 {
-  "name": "fullstackopen-8",
+  "name": "fullstackopen-9",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anton-zykov/fullstackopen-8.git"
+    "url": "git+https://github.com/anton-zykov/fullstackopen-9.git"
   },
   "author": "Anton Zykov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/anton-zykov/fullstackopen-8/issues"
+    "url": "https://github.com/anton-zykov/fullstackopen-9/issues"
   },
-  "homepage": "https://github.com/anton-zykov/fullstackopen-8#readme",
+  "homepage": "https://github.com/anton-zykov/fullstackopen-9#readme",
   "devDependencies": {
     "@types/node": "^20.11.30",
     "ts-node": "^10.9.2",
