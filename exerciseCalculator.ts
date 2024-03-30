@@ -18,7 +18,7 @@ interface Result {
   average: number;
 }
 
-const calculateExercises = (dailyExerciseHours: number[], targetAmount: number): Result => {
+export const calculateExercises = (dailyExerciseHours: number[], targetAmount: number): Result => {
   const average = dailyExerciseHours.reduce((sum, h) => (sum + h)) / dailyExerciseHours.length;
   const partOfTarget = average / targetAmount;
   const rating = partOfTarget < 0.5 ? 1 : partOfTarget < 1 ? 2 : 3;
@@ -33,13 +33,15 @@ const calculateExercises = (dailyExerciseHours: number[], targetAmount: number):
   };
 };
 
-try {
-  const { dailyExerciseHours, targetAmount } = parseArgumentsExercises(process.argv);
-  console.log(calculateExercises(dailyExerciseHours, targetAmount));
-} catch (error: unknown) {
-  let errorMessage = 'Something bad happened.';
-  if (error instanceof Error) {
-    errorMessage += ' Error: ' + error.message;
+if (require.main === module) {
+  try {
+    const { dailyExerciseHours, targetAmount } = parseArgumentsExercises(process.argv);
+    console.log(calculateExercises(dailyExerciseHours, targetAmount));
+  } catch (error: unknown) {
+    let errorMessage = 'Something bad happened.';
+    if (error instanceof Error) {
+      errorMessage += ' Error: ' + error.message;
+    }
+    console.log(errorMessage);
   }
-  console.log(errorMessage);
 }
