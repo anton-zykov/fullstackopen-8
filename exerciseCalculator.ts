@@ -37,7 +37,7 @@ try {
   const { dailyExerciseHours, targetAmount } = parseArgumentsExercises(process.argv);
   console.log(calculateExercises(dailyExerciseHours, targetAmount));
 } catch (error: unknown) {
-  let errorMessage = 'Something bad happened.'
+  let errorMessage = 'Something bad happened.';
   if (error instanceof Error) {
     errorMessage += ' Error: ' + error.message;
   }

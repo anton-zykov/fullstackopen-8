@@ -9,7 +9,7 @@ export const parseArgumentsBmi = (args: string[]): IcalculateBmi => {
     return {
       height: Number(args[2]),
       weight: Number(args[3])
-    }
+    };
   } else {
     throw new Error('Provided values were not numbers!');
   }
@@ -23,7 +23,7 @@ export const parseArgumentsExercises = (args: string[]): IcalculateExercises => 
     return {
       dailyExerciseHours: possibleDays,
       targetAmount: Number(args.at(-1)) 
-    }
+    };
   } else {
     throw new Error('Provided values were not numbers!');
   }
